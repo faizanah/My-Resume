@@ -8,13 +8,6 @@ ActiveAdmin.register Project do
 
   filter :title
 
-  controller do
-
-    def index
-      @projects = current_admin_user.projects.includes(:project_categories).page(params[:page]).per(10) || []
-    end
-
-  end
   index do |org|
     column :title
     column :image
