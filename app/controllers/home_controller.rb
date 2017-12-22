@@ -7,8 +7,8 @@ class HomeController < ApplicationController
                   description: current_profile.about,
                   # keywords: Faker::Lorem.words(4),
                   twitter: {
-                      card: "summary",
-                      site: "@crazycatlady",
+                      card: current_profile.about,
+                      site: current_profile.full_name,
                       title: current_profile.full_name,
                       description:  current_profile.about,
                       image: current_profile.image

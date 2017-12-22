@@ -18,4 +18,8 @@ class ProfileDecorator < ApplicationDecorator
   def picture
     h.image_tag object.image.present? ? object.image : 'noimage.png'
   end
+
+  def cv_download_button
+    h.link_to "Download CV" , object.resume.url , class: 'btn waves-effect waves-light btn-primary custom-btn' , download: object.resume.url
+  end
 end
