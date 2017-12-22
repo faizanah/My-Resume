@@ -1,0 +1,50 @@
+/  ==========================================
+/               ABOUT
+/  ==========================================
+= render 'home/partials/about'
+
+/  ==========================================
+/               EXPERIENCES
+/  ==========================================
+= render 'home/partials/experiences' if not @experiences.empty?
+
+/  ==========================================
+/               SKILLS
+/  ==========================================
+= render 'home/partials/skills' if not @skill_types.empty?
+
+/  ==========================================
+/               EDUCATIONS
+/  ==========================================
+= render 'home/partials/educations' if not @educations.empty?
+
+/= render 'home/partials/services'
+
+/  ==========================================
+/               PORTFOLIOS
+/  ==========================================
+= render 'home/partials/portfolios' if not @project_types.empty?
+
+/= render 'home/partials/achievements'
+/  ==========================================
+/               Publications
+/  ==========================================
+= render 'home/partials/publications'
+
+/= render 'home/partials/blogs'
+/= render 'home/partials/clients'
+
+/  ==========================================
+/               PRICING TABLE
+/  ==========================================
+/= render 'home/partials/pricing'
+
+/  ==========================================
+/                 INTEREST
+/  ==========================================
+/= render 'home/partials/interests'
+
+/  ==========================================
+/                 CONTACT
+/  ==========================================
+= render 'home/partials/contact' if not current_profile.nil?

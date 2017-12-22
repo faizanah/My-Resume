@@ -1,0 +1,54 @@
+section#contact.section
+  h4.text-uppercase.text-center Contact
+  .container
+    .row
+      .col.col-md-5.col-sm-6.col-xs-12
+        .info.card
+          /ul.text-center.center-block data-aos="fade" data-aos-delay="200" data-aos-offset="0"
+          ul.text-center.center-block
+            li
+              i.ion-android-call.center-block
+              span= current_profile.phone
+            li
+              i.ion-email.center-block
+              span= current_profile.email
+            li
+              i.ion-earth.center-block
+              span= current_profile.web_url
+            li
+              i.ion-ios-location.center-block
+              span= current_profile.address
+      /! ./Contact Info
+      /! Contact Form
+      .col.col-md-7.col-sm-6.col-xs-12
+        .contact.card
+          form#contact-form name="contact-form" role="form"
+            .input-field
+              input#name.validate name="name" required="" type="text" /
+              label for="name"  Name
+            .input-field
+              input#subject.validate name="subject" required="" type="text" /
+              label for="subject"  Subject
+            .input-field
+              input#email.validate name="email" required="" type="email" /
+              label for="email"  Email
+            .input-field
+              textarea#textarea.materialize-textarea name="message" required=""
+              label for="textarea"  Massage
+            .row
+              .col.col-md-12.col-sm-12.col-xs-12.text-center
+                = button_tag raw("<div>Send<i class='ion-ios-paperplane' style='margin-left: 5px;'></i></div>"), class: 'btn waves-effect waves-light btn-primary custom-btn' , id: 'submit'
+              #snackbar Your Message is sent
+              #fail-snackbar Something is going wrong, Please try again
+    /! ./Contact Form
+    /! Location MAP
+    /.row
+      .col.col-md-12.col-sm-12.col-xs-12
+        #google-map data-aos="zoom-in" data-aos-delay="0" data-aos-offset="0"
+          #map-container
+          #cd-zoom-in.custom-btn
+            i.material-icons.text-center add
+          #cd-zoom-out.custom-btn
+            i.material-icons.text-center remove
+          /! Your address here
+          address.text-center 25/A New Eskaton Road, Maghbazar, Dhaka 1000, Bangladesh
