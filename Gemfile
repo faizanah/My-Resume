@@ -4,6 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
 gem 'pg', '~> 0.18.4'
 gem 'rails', '~> 5.0.6'
 gem 'puma', '~> 3.0'
@@ -21,7 +22,9 @@ gem 'draper', '~> 3.0', '>= 3.0.1'
 gem 'activeadmin', '~> 1.1.0'
 gem 'meta-tags', '~> 2.7'
 gem 'arctic_admin', '~> 1.3', '>= 1.3.1'
-
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 group :development, :test do
   gem 'byebug'
 end
