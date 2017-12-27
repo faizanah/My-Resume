@@ -17,7 +17,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.3'
 gem "bourbon"
-# gem "active_admin-sortable_tree", "~> 0.2.0"
+gem "activeadmin_reorderable"
 gem 'draper', '~> 3.0', '>= 3.0.1'
 gem 'activeadmin', '~> 1.1.0'
 gem 'meta-tags', '~> 2.7'
@@ -25,6 +25,9 @@ gem 'arctic_admin', '~> 1.3', '>= 1.3.1'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+gem 'activeadmin_froala_editor'
+gem 'acts_as_list'
+
 group :development, :test do
   gem 'byebug'
 end
