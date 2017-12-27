@@ -17,13 +17,12 @@ ActiveAdmin.register Experience do
   form do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Personal Information" do
-      # f.input :url,:hint => "Website URL"
       f.input :job_title , label: "Title"
       f.input :organization_name , label: "Company"
       f.input :organization_url , label: "Url"
       f.input :period_start
       f.input :period_end
-      f.input :summary
+      f.input :summary , as: :froala_editor
     end
     f.actions
   end

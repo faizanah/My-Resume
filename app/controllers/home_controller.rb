@@ -5,7 +5,7 @@ class HomeController < ApplicationController
                   site: current_profile.full_name,
                   reverse: true,
                   description: current_profile.about,
-                  # keywords: Faker::Lorem.words(4),
+                  keywords: "resume , online resume , ruby on rails developers",
                   twitter: {
                       card: current_profile.about,
                       site: current_profile.full_name,

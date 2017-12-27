@@ -33,8 +33,16 @@ Rails.application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
-  config.action_mailer.delivery_method = :letter_opener
-
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :user_name            => ENV['gmail_username'],
+      :password             => ENV['gmail_password'],
+      :authentication       => "plain",
+      :enable_starttls_auto => true
+  }
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 

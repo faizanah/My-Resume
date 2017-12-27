@@ -15,6 +15,10 @@ class ProfileDecorator < ApplicationDecorator
     'style-grey.css'
   end
 
+  def head_title
+    h.content_tag(:title , object.full_name + ' - ' + object.title)
+  end
+
   def picture
     h.image_tag object.image.present? ? object.image : 'noimage.png'
   end
