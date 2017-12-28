@@ -2,12 +2,18 @@ ActiveAdmin.register ProjectCategory do
   menu priority: 6
   permit_params :name
   filter :name
-
+  menu label: "Category" , parent: "Projects"
   before_create do |experience|
     experience.admin_user_id = current_admin_user.id
   end
 
-  index do |org|
+  controller do
+    def scoped_collection
+      super.where(admin_user_id: current_admin_user.id)
+    end
+  end
+
+  index download_links: false do |org|
     column :name
     actions
   end

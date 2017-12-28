@@ -1,15 +1,17 @@
 ActiveAdmin.register Education do
   menu priority: 3
   permit_params :degree ,:school_name, :school_url, :grade , :period_start, :period_end , :summary
+
   before_create do |education|
     education.admin_user_id = current_admin_user.id
   end
 
-  def scoped_collection
-      @educations = current_admin_user.educations
+  controller do
+    def scoped_collection
+      super.where(admin_user_id: current_admin_user.id)
+    end
   end
-
-  index do |org|
+  index download_links: false  do |org|
     column :degree
     column :school_name
     column :period_start

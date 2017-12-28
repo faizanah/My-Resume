@@ -1,20 +1,18 @@
-section#skills.section
-  h4.text-uppercase.text-center Skills
-  .container
-    .row
-      /! Professional Skills
-      - @skill_types.each do |skill_type|
-        .col.col-md-4.col-sm-4.col-xs-12
-          .card.content-wrapper.skill-wrapper
-            h5.text-center.skill-title= skill_type.name
-            - skill_type.skills.each do |skill|
-              - skill_score = (skill.score * 10).to_s+'%'
-              .skill-progress-div
-                /! Add Skill
-                p
-                  = skill.name
-                  span= skill_score
-                /! Edit Value Here
-                .progress.skill-progress data-percent="#{skill_score}"
-                  .determinate.skill-determinate
-                    i.skill-determinate-circle.fa.fa-circle data-aos="zoom-in" data-aos-delay="300" data-aos-offset="0"
+.container
+  .row
+    /! Professional Skills
+    - current_user.skill_types.includes(:skills).each do |skill_type|
+      .col.col-md-4.col-sm-4.col-xs-12
+        .card.content-wrapper.skill-wrapper
+          h5.text-center.skill-title= skill_type.name
+          - skill_type.skills.each do |skill|
+            - skill_score = (skill.score * 10).to_s+'%'
+            .skill-progress-div
+              /! Add Skill
+              p
+                = skill.name
+                span= skill_score
+              /! Edit Value Here
+              .progress.skill-progress data-percent="#{skill_score}"
+                .determinate.skill-determinate
+                  i.skill-determinate-circle.fa.fa-circle data-aos="zoom-in" data-aos-delay="300" data-aos-offset="0"

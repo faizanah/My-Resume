@@ -1,16 +1,14 @@
-section#experience.section
-  h4.text-uppercase.text-center Experience
-  .container
-    .row
-      .col.col-md-12.col-sm-12.col-xs-12
-        .timeline.center-block
-          ul
-            - @experiences.each do |experience|
-              li.card data-aos="fade-up"
-                i.title-icon.fa.fa-circle
-                .timeline-content
-                  .timeline-header
-                    h3.text-capitalize= experience.job_title
-                  p.sub-heading= experience.organization
-                  p.sub-heading= experience.period
-                  p.content-p= experience.summary
+.container
+  .row
+    .col.col-md-12.col-sm-12.col-xs-12
+      .timeline.center-block
+        ul
+          - current_user.experiences.decorate.each do |experience|
+            li.card data-aos="fade-up"
+              i.title-icon.fa.fa-circle
+              .timeline-content
+                .timeline-header
+                  h3.text-capitalize= experience.job_title
+                p.sub-heading= experience.organization
+                p.sub-heading= experience.period
+                p.content-p= experience.summary

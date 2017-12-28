@@ -25,8 +25,10 @@ gem 'arctic_admin', '~> 1.3', '>= 1.3.1'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
-gem 'activeadmin_froala_editor'
 gem 'acts_as_list'
+gem "ckeditor"
+gem 'best_in_place', github: 'bernat/best_in_place'
+
 
 group :development, :test do
   gem 'byebug'

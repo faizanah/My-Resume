@@ -1,82 +1,30 @@
 #header.shadow
-  /! Navigation
   nav
     .nav.nav-wrapper.navbar-fixed-top
       .container-fluid
-        /! Menu Option
         ul.nav-justified.hide-on-med-and-down
           li
             a href="#header"  About
-          - if not @experiences.empty?
-            li
-              = link_to "Experience" , "#experience"
-          - if not @skill_types.empty?
-            li
-              a href="#skills"  Skills
-          - if not @educations.empty?
-            li
-              a href="#education"  Education
-          /li
-            a href="#services"  Services
-          - if not @project_types.empty?
-            li
-              a href="#portfolios"  Portfolios
-          /li
-          /  a href="#achievement"  Achievement
-          /li
-          /  a href="#publications"  Publications
-          /li
-          /  a href="#blog"  Blog
-          /li
-          /  a href="#clients"  Clients
-          /li
-          /  a href="#pricing"  Pricing
-          /li
-          /  a href="#interest"  Interest
+          - @contents.each do |content|
+            = content.link
           li
             a href="#contact"  Contact
         a#nav-btn.button-collapse.nav-icon data-activates="nav-mobile" href="#0"
           i.ion-navicon
-        /! Side Nav
         #side-nav
           #nav-header
             #nav-profile.center-block
-              /! Profile Picture [Square]
               = current_profile.picture
             h6.text-center.text-capitalize= current_profile.full_name
           #nav-link-wrapper
-            /! Side Menu Option
             ul
               li
                 a.nav-link href="#header"  About
-              li
-                a.nav-link href="#experience"  Experience
-              li
-                a.nav-link href="#skills"  Skills
-              li
-                a.nav-link href="#education"  Education
-              li
-                a.nav-link href="#services"  Services
-              li
-                a.nav-link href="#portfolios"  Portfolios
-              li
-                a.nav-link href="#achievement"  Achievement
-              li
-                a.nav-link href="#publications"  Publications
-              li
-                a.nav-link href="#blog"  Blog
-              li
-                a.nav-link href="#clients"  Clients
-              li
-                a.nav-link href="#pricing"  Pricing
-              li
-                a.nav-link href="#interest"  Interest
+              - @contents.each do |content|
+                = content.nav_link
               li
                 a.nav-link href="#contact"  Contact
-        /! ./Side Nav
-        /! Side Nav Mask
         #side-nav-mask
-  /! Name and Status
   #intro.container
     h1.text-center.text-capitalize= current_profile.full_name
     h4.text-center.text-capitalize= current_profile.title

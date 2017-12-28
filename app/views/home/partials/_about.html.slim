@@ -6,27 +6,29 @@ section#about.section
           = current_profile.picture
         #intro-div.card.content-wrapper
           ul.text-center.list-inline
-            li
-              a href="#0" target="_blank"
-                i.ion-social-facebook
-            li
-              a href="#0" target="_blank"
-                i.ion-social-twitter
-            li
-              a href="#0" target="_blank"
-                i.ion-social-linkedin
-            li
-              a href="#0" target="_blank"
-                i.ion-social-googleplus
-            li
-              a href="#0" target="_blank"
-                i.ion-social-instagram
+            = current_profile.linkedin_link
+            = current_profile.facebook_link
+            /li
+            /  a href="#0" target="_blank"
+            /    i.ion-social-facebook
+            /li
+            /  a href="#0" target="_blank"
+            /    i.ion-social-twitter
+            /li
+            /  a href="#0" target="_blank"
+            /    i.ion-social-linkedin
+            /li
+            /  a href="#0" target="_blank"
+            /    i.ion-social-googleplus
+            /li
+            /  a href="#0" target="_blank"
+            /    i.ion-social-instagram
           /! Some Intro About You
           p.text-center
-            = current_profile.about
+            = raw(current_profile.about)
           .row
             /! Download &amp; Contact Button
             .col.col-xs-12.col-sm-12.col-md-12.text-center
               /! Your CV File
               = current_profile.cv_download_button
-              a.btn.waves-effect.waves-light.btn-primary.custom-btn href="#contact"  Contact Me
+              = current_profile.contact_me_button

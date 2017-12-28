@@ -1,20 +1,18 @@
-section#portfolios.section
-  h4.text-uppercase.text-center Portfolios
-  .container
-    .row
-      ul.text-center.simple-filter data-aos="zoom-in" data-aos-delay="300" data-aos-duration="500"
-        li.active-cat data-filter="all"
-          a All
-        - @project_types.each do |project_type|
-          li data-filter="#{project_type.id.to_s}"
-            a= project_type.name
-      .filtr-container.center-block
-        - @projects.each do |project|
-          .col.col-md-3.col-sm-6.col-xs-12.filtr-item data-category="#{project.catageories}"
-            .portfolio.card
-              figure.hover-effect
-                /! Portfolio Image
-                = project.responsive_image
-                = project.modal_link
-              h6.text-capitalize.text-center= project.title
-          = project.modal
+.container
+  .row
+    ul.text-center.simple-filter data-aos="zoom-in" data-aos-delay="300" data-aos-duration="500"
+      li.active-cat data-filter="all"
+        a All
+      - current_user.project_categories.each do |project_type|
+        li data-filter="#{project_type.id.to_s}"
+          a= project_type.name
+    .filtr-container.center-block
+      - current_user.projects.includes(:project_categories).decorate.each do |project|
+        .col.col-md-3.col-sm-6.col-xs-12.filtr-item data-category="#{project.catageories}"
+          .portfolio.card
+            figure.hover-effect
+              /! Portfolio Image
+              = project.responsive_image
+              = project.modal_link
+            h6.text-capitalize.text-center= project.title
+        = project.modal

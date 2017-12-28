@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171222183625) do
+ActiveRecord::Schema.define(version: 20171228150038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,18 @@ ActiveRecord::Schema.define(version: 20171222183625) do
     t.index ["attached_item_type"], name: "index_attachments_on_attached_item_type", using: :btree
   end
 
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.string   "name",          null: false
     t.string   "email",         null: false
@@ -68,6 +80,13 @@ ActiveRecord::Schema.define(version: 20171222183625) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["admin_user_id"], name: "index_contacts_on_admin_user_id", using: :btree
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "value",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "educations", force: :cascade do |t|
@@ -97,6 +116,15 @@ ActiveRecord::Schema.define(version: 20171222183625) do
     t.index ["admin_user_id"], name: "index_experiences_on_admin_user_id", using: :btree
   end
 
+  create_table "interests", force: :cascade do |t|
+    t.string   "name",          null: false
+    t.string   "icon",          null: false
+    t.integer  "admin_user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["admin_user_id"], name: "index_interests_on_admin_user_id", using: :btree
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string   "full_name"
     t.string   "title"
@@ -110,6 +138,10 @@ ActiveRecord::Schema.define(version: 20171222183625) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "resume"
+    t.integer  "theme_id"
+    t.string   "linkedin_url"
+    t.string   "map_url"
+    t.string   "facebook_url"
     t.index ["admin_user_id"], name: "index_profiles_on_admin_user_id", using: :btree
     t.index ["email"], name: "index_profiles_on_email", using: :btree
     t.index ["full_name"], name: "index_profiles_on_full_name", using: :btree
@@ -178,6 +210,17 @@ ActiveRecord::Schema.define(version: 20171222183625) do
     t.string   "value",      null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_contents", force: :cascade do |t|
+    t.integer  "admin_user_id"
+    t.integer  "content_id"
+    t.integer  "position",      default: 0
+    t.boolean  "is_visible",    default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["admin_user_id"], name: "index_user_contents_on_admin_user_id", using: :btree
+    t.index ["content_id"], name: "index_user_contents_on_content_id", using: :btree
   end
 
 end

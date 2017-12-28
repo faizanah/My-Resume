@@ -1,14 +1,25 @@
 ActiveAdmin.register Project do
   menu priority: 7
   permit_params :title , :image , :tags ,  :url , :summary , project_category_ids: []
-
+  menu parent: "Projects"
+  # navigation_menu :project_categories
   before_create do |project|
     project.admin_user_id = current_admin_user.id
   end
 
   filter :title
 
-  index do |org|
+  controller do
+    def scoped_collection
+      super.where(admin_user_id: current_admin_user.id)
+    end
+
+    def find_resource
+      scoped_collection.where(id: params[:id]).first!
+    end
+  end
+
+  index download_links: false do |org|
     column :title
     column :image
     column :tags

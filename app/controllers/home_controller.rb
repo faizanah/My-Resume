@@ -5,7 +5,7 @@ class HomeController < ApplicationController
                   site: current_profile.full_name,
                   reverse: true,
                   description: current_profile.about,
-                  keywords: "resume , online resume , ruby on rails developers",
+                  keywords: "resume , online resume , ruby on rails developer",
                   twitter: {
                       card: current_profile.about,
                       site: current_profile.full_name,
@@ -22,11 +22,7 @@ class HomeController < ApplicationController
                   }
 
     @contact_us    = current_user.contacts.new
-    @experiences   = current_user.experiences.all.decorate || []
-    @educations    = current_user.educations.all.decorate || []
-    @skill_types   = current_user.skill_types.includes(:skills) || []
-    @project_types = current_user.project_categories || []
-    @projects      = current_user.projects.includes(:project_categories).decorate || []
+    @contents      = current_user.contents.visible.decorate || []
   end
 
 end

@@ -1,13 +1,19 @@
 ActiveAdmin.register Skill do
-  menu priority: 5
   permit_params :name , :skill_type_id , :score
   filter :name
+  menu label: "Skills" , parent: "Skills" , priority: 5
 
   before_create do |skill|
     skill.admin_user_id = current_admin_user.id
   end
 
-  index do |org|
+  controller do
+    def scoped_collection
+      super.where(admin_user_id: current_admin_user.id)
+    end
+  end
+
+  index download_links: false do |org|
     column :name
     column :score do |skill|
       (skill.score * 10).to_s + "%"

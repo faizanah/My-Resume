@@ -5,6 +5,7 @@ class Project < ApplicationRecord
 
   belongs_to :admin_user
   has_and_belongs_to_many :project_categories
+  mount_uploader :image, ProjectUploader
 
   has_many :attachments, as: :attached_item, dependent: :destroy
 

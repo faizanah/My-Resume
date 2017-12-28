@@ -1,37 +1,37 @@
-section#interest.section
-  h4.text-uppercase.text-center Interest
-  .container
-    .row
-      .col.col-md-12.col-sm-12.col-xs-12
-        .card.interest
-          .row
-            .col.col-md-12.col-sm-12.col-xs-12
-              /! Some brief about your interest
-              p.text-center
-                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-                | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel sollicitudin.
-                | Vestibulum venenatis pharetrami. Lorem ipsum dolor sit amet.
-            /! Interest Topic Icon and Name
-            ul.col-md-12.col-sm-12.col-xs-12.text-center.list-inline
-              li.interest-topic
-                i.ion-ios-film
-                span Documentary
-              li.interest-topic
-                i.ion-compose
-                span Blogging
-              li.interest-topic
-                i.ion-headphone
-                span Music
-              li.interest-topic
-                i.ion-ios-football
-                span Football
-              li.interest-topic
-                i.ion-plane
-                span Traveling
-              li.interest-topic
-                i.ion-ios-game-controller-b
-                span Gaming
-              li.interest-topic
-                i.ion-ios-camera
-                span Photography
+.container
+  .row
+    .col.col-md-12.col-sm-12.col-xs-12
+      .card.interest
+        .row
+          /.col.col-md-12.col-sm-12.col-xs-12
+            /! Some brief about your interest
+            /p.text-center
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
+              | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel sollicitudin.
+              | Vestibulum venenatis pharetrami. Lorem ipsum dolor sit amet.
+          /! Interest Topic Icon and Name
+          ul.col-md-12.col-sm-12.col-xs-12.text-center.list-inline
+            - current_user.interests.decorate.each do |interest|
+              = interest.display
+            li.interest-topic
+              i.ion-ios-film
+              span Documentary
+            li.interest-topic
+              i.ion-compose
+              span Blogging
+            li.interest-topic
+              i.ion-headphone
+              span Music
+            li.interest-topic
+              i.ion-ios-football
+              span Football
+            li.interest-topic
+              i.ion-plane
+              span Traveling
+            li.interest-topic
+              i.ion-ios-game-controller-b
+              span Gaming
+            li.interest-topic
+              i.ion-ios-camera
+              span Photography
 /! ./Interest Topic Icon and Name

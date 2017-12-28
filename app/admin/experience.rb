@@ -1,11 +1,20 @@
 ActiveAdmin.register Experience do
   menu priority: 2
   permit_params :job_title ,:organization_name, :organization_url, :period_start, :period_end , :summary
+
   before_create do |experience|
     experience.admin_user_id = current_admin_user.id
   end
+
   filter :title
-  index do |org|
+
+  controller do
+    def scoped_collection
+      super.where(admin_user_id: current_admin_user.id)
+    end
+  end
+
+  index download_links: false do |org|
     column :job_title
     column :organization_name
     column :period_start
@@ -22,7 +31,8 @@ ActiveAdmin.register Experience do
       f.input :organization_url , label: "Url"
       f.input :period_start
       f.input :period_end
-      f.input :summary , as: :froala_editor
+      # f.input :summary , as: :ckeditor
+      f.input :summary
     end
     f.actions
   end
