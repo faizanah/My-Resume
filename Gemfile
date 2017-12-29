@@ -28,6 +28,7 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'acts_as_list'
 gem "ckeditor"
 gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'mini_magick'
 
 
 group :development, :test do
