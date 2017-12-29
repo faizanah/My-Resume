@@ -282,7 +282,7 @@ ActiveAdmin.setup do |config|
   # By default, the footer shows the current Active Admin version. You can
   # override the content of the footer here.
   #
-  config.footer = 'Version 1.3'
+  config.footer = 'Powered by Faizan Ahmad Version 1.3'
   config.register_javascript 'ckeditor/init.js'
   # == Sorting
   #

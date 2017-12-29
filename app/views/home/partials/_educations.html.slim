@@ -1,20 +1,16 @@
 .container
   .row
     .col.col-md-12.col-sm-12.col-xs-12
-      /! Timeline
       .timeline.center-block
         ul
           - current_user.educations.decorate.each do |education|
             li.card data-aos="fade-up"
               i.title-icon.fa.fa-circle
               .timeline-content
-                /! Heading
                 .timeline-header
                   h3.text-capitalize= education.degree
-                /! Institution, Period &amp; result
                 p.sub-heading= education.school
                 p.sub-heading= education.period
                 /p.sub-heading Result: 4.0 out of 4.0
-                /! Education Summary
                 p.content-p
                   = education.summary

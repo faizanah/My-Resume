@@ -1,4 +1,6 @@
 ActiveAdmin.register Contact do
+  menu label: "Contact Us" ,  priority: 101
+
   actions :all, :except => [:destroy , :new , :create , :update , :edit]
   permit_params :name ,:email, :message, :subject
 

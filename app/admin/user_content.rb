@@ -5,7 +5,7 @@ ActiveAdmin.register UserContent do
   config.sort_order = 'position_asc'
   config.paginate   = false
   # menu false
-  menu label: "Configuration"
+  menu label: "Configuration" ,  priority: 102
   controller do
   def scoped_collection
     super.where(admin_user_id: current_admin_user.id).position_asc.includes(:content)

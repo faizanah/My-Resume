@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171228150038) do
+ActiveRecord::Schema.define(version: 20171229132236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.string   "title",         null: false
+    t.string   "description"
+    t.string   "icon",          null: false
+    t.date     "date"
+    t.integer  "admin_user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["admin_user_id"], name: "index_achievements_on_admin_user_id", using: :btree
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -176,6 +187,29 @@ ActiveRecord::Schema.define(version: 20171228150038) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["admin_user_id"], name: "index_projects_on_admin_user_id", using: :btree
+  end
+
+  create_table "publications", force: :cascade do |t|
+    t.string   "title",                        null: false
+    t.string   "description"
+    t.string   "publisher",                    null: false
+    t.date     "publication_date"
+    t.string   "publication_url"
+    t.integer  "position",         default: 0, null: false
+    t.integer  "admin_user_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["admin_user_id"], name: "index_publications_on_admin_user_id", using: :btree
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "title",         null: false
+    t.string   "description"
+    t.string   "icon",          null: false
+    t.integer  "admin_user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["admin_user_id"], name: "index_services_on_admin_user_id", using: :btree
   end
 
   create_table "skill_types", force: :cascade do |t|

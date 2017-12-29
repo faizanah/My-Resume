@@ -13,6 +13,9 @@ class AdminUser < ApplicationRecord
   has_many :contacts , dependent: :destroy
   has_many :interests , dependent: :destroy
   has_many :user_contents , dependent: :destroy
+  has_many :services , dependent: :destroy
+  has_many :achievements , dependent: :destroy
+  has_many :publications , dependent: :destroy
   has_many :contents , through: :user_contents
 
   after_create :set_profile

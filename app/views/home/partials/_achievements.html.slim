@@ -1,139 +1,18 @@
 .container
   .row
     /! 1st Achievement
-    .col.col-md-4.col-sm-6.col-xs-12
-      .achievement
-        .achievement-top-bar
-          /! Achievement Title Here
-          h5.text-center.text-capitalize ACM Software System Award
-        .achievement-inner
-          .achievement-header
-            .achievement-heading
-              /! Icon and Date
-              i.text-center.ion-ribbon-a
-              h6.text-center June 2016
-            /! Button ID For Content ID
-            a#btn-1.btn-floating.waves-effect.waves-light.btn-large.achievement-more-btn.custom-btn data-aos="zoom-in" data-aos-delay="300"
-              i.ion-ios-arrow-down
-          /! Content ID
-          #content-1.achievement-content
-            /! Description
-            p.text-center
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-              | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel sollicitudin. Vestibulum
-              | venenatis pharetra mi, ut vestibulum elit ultricies.
-    /! ./1st Achievement
-    /! 2nd Achievement
-    .col.col-md-4.col-sm-6.col-xs-12
-      .achievement
-        .achievement-top-bar
-          /! Achievement Title Here
-          h5.text-center.text-capitalize National Badminton Champion
-        .achievement-inner
-          .achievement-header
-            .achievement-heading
-              /! Icon and Date
-              i.text-center.ion-trophy
-              h6.text-center April 2016
-            /! Button ID For Content ID
-            a#btn-2.btn-floating.waves-effect.waves-light.btn-large.achievement-more-btn.custom-btn data-aos="zoom-in" data-aos-delay="300"
-              i.ion-ios-arrow-down
-          /! Content ID
-          #content-2.achievement-content
-            /! Description
-            p.text-center
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-              | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel sollicitudin. Vestibulum
-              | venenatis pharetra mi, ut vestibulum elit ultricies.
-    /! ./2nd Achievement
-    /! 3rd Achievement
-    .col.col-md-4.col-sm-6.col-xs-12
-      .achievement
-        .achievement-top-bar
-          /! Achievement Title Here
-          h5.text-center.text-capitalize Microsoft Award
-        .achievement-inner
-          .achievement-header
-            .achievement-heading
-              /! Icon and Date
-              i.text-center.ion-ribbon-b
-              h6.text-center June 2015
-            /! Button ID For Content ID
-            a#btn-3.btn-floating.waves-effect.waves-light.btn-large.achievement-more-btn.custom-btn data-aos="zoom-in" data-aos-delay="300"
-              i.ion-ios-arrow-down
-          /! Content ID
-          #content-3.achievement-content
-            /! Description
-            p.text-center
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-              | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel sollicitudin. Vestibulum
-              | venenatis pharetra mi, ut vestibulum elit ultricies.
-    /! ./3rd Achievement
-    /! 4th Achievement
-    .col.col-md-4.col-sm-6.col-xs-12
-      .achievement
-        .achievement-top-bar
-          /! Achievement Title Here
-          h5.text-center.text-capitalize Fire Bal Pro Membership
-        .achievement-inner
-          .achievement-header
-            .achievement-heading
-              /! Icon and Date
-              i.text-center.ion-fireball
-              h6.text-center May 2015
-            /! Button ID For Content ID
-            a#btn-4.btn-floating.waves-effect.waves-light.btn-large.achievement-more-btn.custom-btn data-aos="zoom-in" data-aos-delay="300"
-              i.ion-ios-arrow-down
-          /! Content ID
-          #content-4.achievement-content
-            /! Description
-            p.text-center
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-              | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel sollicitudin. Vestibulum
-              | venenatis pharetra mi, ut vestibulum elit ultricies.
-    /! ./4th Achievement
-    /! 5th Achievement
-    .col.col-md-4.col-sm-6.col-xs-12
-      .achievement
-        .achievement-top-bar
-          /! Achievement Title Here
-          h5.text-center.text-capitalize National Biking Champion
-        .achievement-inner
-          .achievement-header
-            .achievement-heading
-              /! Icon and Date
-              i.text-center.ion-android-bicycle
-              h6.text-center April 2014
-            /! Button ID For Content ID
-            a#btn-5.btn-floating.waves-effect.waves-light.btn-large.achievement-more-btn.custom-btn data-aos="zoom-in" data-aos-delay="300"
-              i.ion-ios-arrow-down
-          /! Content ID
-          #content-5.achievement-content
-            /! Description
-            p.text-center
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-              | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel sollicitudin. Vestibulum
-              | venenatis pharetra mi, ut vestibulum elit ultricies.
-    /! ./5th Achievement
-    /! 6th Achievement
-    .col.col-md-4.col-sm-6.col-xs-12
-      .achievement
-        .achievement-top-bar
-          /! Achievement Title Here
-          h5.text-center.text-capitalize ECO Club Pro Membership
-        .achievement-inner
-          .achievement-header
-            .achievement-heading
-              /! Icon and Date
-              i.text-center.ion-leaf
-              h6.text-center June 2014
-            /! Button ID For Content ID
-            a#btn-6.btn-floating.waves-effect.waves-light.btn-large.achievement-more-btn.custom-btn data-aos="zoom-in" data-aos-delay="300"
-              i.ion-ios-arrow-down
-          /! Content ID
-          #content-6.achievement-content
-            /! Description
-            p.text-center
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-              | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel sollicitudin. Vestibulum
-              | venenatis pharetra mi, ut vestibulum elit ultricies.
+    - current_user.achievements.decorate.each do |achievement|
+      .col.col-md-4.col-sm-6.col-xs-12
+        .achievement
+          .achievement-top-bar
+            h5.text-center.text-capitalize= achievement.name
+          .achievement-inner
+            .achievement-header
+              .achievement-heading
+                i.text-center  class="#{achievement.icon}"
+                = achievement.formatted_date
+              a.btn-floating.waves-effect.waves-light.btn-large.achievement-more-btn.custom-btn data-aos="zoom-in" data-aos-delay="300" id="btn-#{achievement.id}"
+                i.ion-ios-arrow-down
+            .achievement-content id="content-#{achievement.id}"
+              p.text-center
+                = raw achievement.description

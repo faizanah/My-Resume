@@ -1,6 +1,9 @@
 $primary-color: #00bcd4;
+@import "bootstrap.scss";
 @import "arctic_admin/base";
-@import "dist/css/bootstrap-iconpicker.min";
+@import 'font-awesome.min';
+@import 'ionicons.min';
+@import "dist/css/bootstrap-iconpicker.min.css";
 .cke_chrome {
   overflow: hidden;
 }
@@ -8,4 +11,7 @@ $primary-color: #00bcd4;
   margin-bottom: 20px !important;
 }
 
-
+.font-35{
+  font-size: 25px !important;
+  color: $primary-color;
+}
