@@ -1,8 +1,8 @@
 ActiveAdmin.register Interest do
-  actions :all, except: [:show]
+  actions :all
 
   menu priority: 100
-  permit_params :title , :icon
+  permit_params :name , :icon
 
   before_create do |interest|
     interest.admin_user_id = current_admin_user.id
@@ -25,8 +25,8 @@ ActiveAdmin.register Interest do
       div class: "#{interest.icon} font-35" do
       end
     end
-    column  :title do |interest|
-      best_in_place interest, :name, url: [:admin, interest]
+    column  :name do |interest|
+      best_in_place interest, :title, url: [:admin, interest]
     end
     actions
   end
@@ -34,7 +34,7 @@ ActiveAdmin.register Interest do
   form class: 'form-horizontal' do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Interests" do
-      f.input :title
+      f.input :name
 
       div class: "row" do
         div class: 'col-md-3'do
