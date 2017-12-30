@@ -3,7 +3,7 @@ class InterestDecorator < ApplicationDecorator
 
   def display
     h.content_tag :li , class: 'interest-topic' do
-      h.content_tag(:i , '' ,class: object.icon) + h.content_tag(:span , object.title)
+      h.content_tag(:i , '' ,class: object.icon) + h.content_tag(:span , object.name)
     end
   end
 
