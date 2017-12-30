@@ -26,7 +26,7 @@ ActiveAdmin.register Interest do
       end
     end
     column  :name do |interest|
-      best_in_place interest, :title, url: [:admin, interest]
+      best_in_place interest, :name, url: [:admin, interest]
     end
     actions
   end
