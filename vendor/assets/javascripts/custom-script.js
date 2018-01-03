@@ -33,6 +33,7 @@ equalheight = function(container){
     "use strict";
      $(window).on('load', function () {
          equalheight('.skill-wrapper');
+         equalheight('.hover-effect');
         $('#page-loader').fadeOut(3000);
         $('#intro').addClass('animated fadeInDown');
         $('#intro-div').addClass('animated fadeInUp');
