@@ -1,6 +1,7 @@
-
+#CKEDITOR_BASEPATH = '/assets/ckeditor/'
 #= require dist/jquery.min
 #= require arctic_admin/base
+#= require ckeditor/init
 #= require best_in_place
 #= require jquery.purr
 #= require best_in_place.purr
