@@ -312,6 +312,7 @@ DEPENDENCIES
   devise (~> 4.3)
   draper (~> 3.0, >= 3.0.1)
   figaro (~> 1.1, >= 1.1.1)
+  font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener
