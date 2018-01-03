@@ -51,13 +51,5 @@ ActiveAdmin.register Profile do
     end
     f.actions
   end
-  # form do |f|
-  #   f.semantic_errors *f.object.errors.keys
-  #   f.inputs "Personal Information" do
-  #     f.input :title , label: "Current Job Title/Position"
-  #
-  #   end
-  #   f.actions
-  # end
 
 end

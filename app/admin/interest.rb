@@ -31,6 +31,21 @@ ActiveAdmin.register Interest do
     actions
   end
 
+  show do
+    attributes_table do
+      row  :name do |interest|
+        best_in_place interest, :name, url: [:admin, interest]
+      end
+      row :icon do |interest|
+        div class: "#{interest.icon} font-35" do
+        end
+      end
+      row :created_at
+      row :updated_at
+    end
+  end
+
+
   form class: 'form-horizontal' do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Interests" do

@@ -57,12 +57,12 @@ ActiveAdmin.register SkillType do
       f.input :name
     end
 
-      f.has_many :skills , allow_destroy: true,  new_record: true do |c|
-        c.input :name
-        c.input :score
-        c.input :admin_user_id, :input_html => { :value => current_admin_user.id }, as: :hidden
+    f.has_many :skills , allow_destroy: true,  new_record: true do |c|
+      c.input :name
+      c.input :score
+      c.input :admin_user_id, :input_html => { :value => current_admin_user.id }, as: :hidden
 
-      end
+    end
 
     f.actions
   end

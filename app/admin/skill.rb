@@ -14,12 +14,26 @@ ActiveAdmin.register Skill do
   end
 
   index download_links: false do |org|
-    column :name
+    column  :name do |skill|
+      best_in_place skill, :name, url: [:admin, skill]
+    end
     column :score do |skill|
       (skill.score * 10).to_s + "%"
     end
     column :skill_type
     actions
+  end
+
+  show do
+    attributes_table do
+      row :name
+      row :skill_type
+      row :score do |skill|
+        (skill.score * 10).to_s + "%"
+      end
+      row :created_at
+      row :updated_at
+    end
   end
 
   form do |f|
