@@ -24,6 +24,7 @@ ActiveAdmin.register Profile do
       tab 'Personal Details' do
         f.input :full_name
         f.input :image
+        f.input :about , as: :ckeditor
       end
 
       tab 'Contact Details' do
@@ -36,7 +37,6 @@ ActiveAdmin.register Profile do
 
       tab 'Job Details' do
         f.input :title , label: "Current Job Title/Position"
-        f.input :about , as: :ckeditor
         f.input :resume
       end
 

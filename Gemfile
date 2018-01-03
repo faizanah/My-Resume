@@ -29,7 +29,7 @@ gem 'acts_as_list'
 gem "ckeditor"
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'mini_magick'
-
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'
