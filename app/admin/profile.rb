@@ -1,7 +1,7 @@
 ActiveAdmin.register Profile do
   menu priority: 1
   actions :all, :except => [:destroy , :new]
-  permit_params :full_name,:title ,:facebook_url , :linkedin_url , :map_url , :theme_id , :resume , :about, :email, :phone , :image , :web_url, :address
+  permit_params :full_name,:title ,:facebook_url , :git_url , :linkedin_url , :map_url , :theme_id , :resume , :about, :email, :phone , :image , :web_url, :address
   config.filters = false
 
   controller do
@@ -43,6 +43,7 @@ ActiveAdmin.register Profile do
       tab 'Social Links' do
         f.input :facebook_url
         f.input :linkedin_url
+        f.input :git_url
       end
 
       tab 'Theme' do

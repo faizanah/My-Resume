@@ -8,22 +8,7 @@ section#about.section
           ul.text-center.list-inline
             = current_profile.linkedin_link
             = current_profile.facebook_link
-            /li
-            /  a href="#0" target="_blank"
-            /    i.ion-social-facebook
-            /li
-            /  a href="#0" target="_blank"
-            /    i.ion-social-twitter
-            /li
-            /  a href="#0" target="_blank"
-            /    i.ion-social-linkedin
-            /li
-            /  a href="#0" target="_blank"
-            /    i.ion-social-googleplus
-            /li
-            /  a href="#0" target="_blank"
-            /    i.ion-social-instagram
-          /! Some Intro About You
+            = current_profile.git_link
           p.text-center
             = raw(current_profile.about)
           .row

@@ -34,13 +34,19 @@ class ProfileDecorator < ApplicationDecorator
 
   def linkedin_link
     h.content_tag :li do
-      h.link_to h.content_tag(:i, '' , class: 'ion-social-linkedin') , object.linkedin_url.present? ?  object.linkedin_url : '#',target: "_blank"
-    end
+      h.link_to h.content_tag(:i, '' , class: 'ion-social-linkedin') ,  object.linkedin_url,target: "_blank" , title: "LinkedIn"
+    end if object.linkedin_url.present?
   end
 
   def facebook_link
     h.content_tag :li do
-      h.link_to h.content_tag(:i, '' , class: 'ion-social-facebook') , object.facebook_url.present? ?  object.facebook_url : '#',target: "_blank"
-    end
+      h.link_to h.content_tag(:i, '' , class: 'ion-social-facebook') , object.facebook_url ,target: "_blank" , title: "Facebook"
+    end if object.facebook_url.present?
+  end
+
+  def git_link
+    h.content_tag :li do
+      h.link_to h.content_tag(:i, '' , class: 'ion-social-github') , object.git_url ,target: "_blank" , title: "Git"
+    end if object.git_url.present?
   end
 end
