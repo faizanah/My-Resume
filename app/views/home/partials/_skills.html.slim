@@ -1,6 +1,6 @@
 .container
   .row
-    - current_user.skill_types.includes(:skills).each do |skill_type|
+    - current_user.skill_types.position_desc.includes(:skills).each do |skill_type|
       .col.col-md-4.col-sm-4.col-xs-12
         .card.content-wrapper.skill-wrapper
           h5.text-center.skill-title= skill_type.name

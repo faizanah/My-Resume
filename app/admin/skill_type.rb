@@ -1,6 +1,7 @@
 ActiveAdmin.register SkillType do
   permit_params :name , :position , skills_attributes: [ :id, :admin_user_id , :name, :score , :_destroy, :_create, :_update ]
   config.filters = false
+  config.sort_order = 'position_asc'
   menu label: "Types" , parent: "Skills" , priority: 4
 
   reorderable
@@ -23,7 +24,6 @@ ActiveAdmin.register SkillType do
     column  :name do |project|
       best_in_place project, :name, url: [:admin, project]
     end
-
     column "No. of Skills" do |skill|
       skill.skills.count
     end

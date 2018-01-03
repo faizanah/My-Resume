@@ -7,7 +7,7 @@ class AdminUser < ApplicationRecord
   has_many :experiences, dependent: :destroy
   has_many :educations, dependent: :destroy
   has_many :skills, dependent: :destroy
-  has_many :skill_types, dependent: :destroy
+  has_many :skill_types , -> { order(position: :asc) } , dependent: :destroy
   has_many :project_categories, dependent: :destroy
   has_many :projects, dependent: :destroy
   has_many :contacts , dependent: :destroy

@@ -1,7 +1,7 @@
 ActiveAdmin.register Publication do
   actions :all
 
-  menu priority: 100
+  menu priority: 97
   permit_params :title , :description , :publisher , :publication_date , :publication_url
   reorderable
   before_create do |publication|

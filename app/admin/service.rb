@@ -32,7 +32,7 @@ ActiveAdmin.register Service do
     f.semantic_errors *f.object.errors.keys
     f.inputs "Services" do
       f.input :title
-      f.input :description
+      f.input :description , as: :text
       div class: "row" do
         div class: 'col-md-3'do
         end

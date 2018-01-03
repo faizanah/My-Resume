@@ -5,7 +5,7 @@
 #= require best_in_place
 #= require jquery.purr
 #= require best_in_place.purr
-#= require activeadmin_reorderable
+#= require new_activeadmin_reorderable
 #= require bootstrap.min
 #= require dist/js/bootstrap-iconpicker-iconset-all.min
 #= require dist/js/bootstrap-iconpicker.min
