@@ -12,7 +12,7 @@ class AdminUser < ApplicationRecord
   has_many :projects, dependent: :destroy
   has_many :contacts , dependent: :destroy
   has_many :interests , dependent: :destroy
-  has_many :user_contents , dependent: :destroy
+  has_many :user_contents , -> { order(position: :asc) } , dependent: :destroy
   has_many :services , dependent: :destroy
   has_many :achievements , dependent: :destroy
   has_many :publications , dependent: :destroy

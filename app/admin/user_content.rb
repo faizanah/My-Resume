@@ -8,7 +8,7 @@ ActiveAdmin.register UserContent do
   menu label: "Configuration" ,  priority: 102
   controller do
     def scoped_collection
-      super.where(admin_user_id: current_admin_user.id).position_asc.includes(:content)
+      super.where(admin_user_id: current_admin_user.id).includes(:content)
     end
   end
 
