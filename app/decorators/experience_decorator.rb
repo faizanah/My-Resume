@@ -2,7 +2,7 @@ class ExperienceDecorator < ApplicationDecorator
   delegate_all
 
     def organization
-      h.link_to object.organization_name , object.organization_url
+      h.link_to object.organization_name , object.organization_url , target: '_blank'
     end
 
     def period

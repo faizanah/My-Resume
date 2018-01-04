@@ -2,7 +2,7 @@ class EducationDecorator < Draper::Decorator
   delegate_all
 
   def school
-    h.link_to object.school_name , object.school_url
+    h.link_to object.school_name , object.school_url , target: '_blank'
   end
 
   def period
