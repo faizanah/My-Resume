@@ -2,6 +2,7 @@ ActiveAdmin.register ProjectCategory do
   menu priority: 6
   permit_params :name
   filter :name
+  config.sort_order = 'position_asc'
   menu label: "Category" , parent: "Projects"
   before_create do |experience|
     experience.admin_user_id = current_admin_user.id
