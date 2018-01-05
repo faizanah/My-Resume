@@ -1,9 +1,10 @@
 class Attachment < ActiveRecord::Base
-  # mount_uploader :attachment, AttachmentUploader
+  mount_uploader :attachment, ProjectUploader
 
   # Associations
 
   belongs_to :attached_item, polymorphic: true
+  # belongs_to :project, class_name: "Project" , foreign_key: :attached_item_id
 
   # Validations
 

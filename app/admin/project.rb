@@ -1,6 +1,6 @@
 ActiveAdmin.register Project do
   menu priority: 7
-  permit_params :title , :image , :tags ,  :url , :summary , project_category_ids: []
+  permit_params :title , :image , :tags ,  :url , :summary , project_category_ids: [] , attachments_attributes: [ :id , :attached_item_id , :attached_item_type ,:attachment , :_destroy, :_create, :_update ]
   menu parent: "Projects"
 
   before_create do |project|
@@ -57,6 +57,12 @@ ActiveAdmin.register Project do
       f.input :project_categories, label: "Categories" , as: :check_boxes
       f.input :url , label: "Url"
       f.input :summary , as: :ckeditor
+
+      f.has_many :attachments , allow_destroy: true,  new_record: true do |c|
+        c.input :attachment
+        c.input :attached_item_type ,:input_html => { :value => "Project" }, as: :hidden
+      end
+
     end
     f.actions
   end

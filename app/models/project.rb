@@ -8,6 +8,7 @@ class Project < ApplicationRecord
   mount_uploader :image, ProjectUploader
 
   has_many :attachments, as: :attached_item, dependent: :destroy
+  # has_many :attachments, class_name: "Attachment" , foreign_key: :attached_item_id
 
   accepts_nested_attributes_for :project_categories
   accepts_nested_attributes_for :attachments, allow_destroy: true, reject_if: proc { |attributes| attributes[:attachment].nil? }

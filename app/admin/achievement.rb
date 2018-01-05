@@ -27,6 +27,7 @@ ActiveAdmin.register Achievement do
     column  :title do |achievement|
       best_in_place achievement, :title, url: [:admin, achievement]
     end
+    column  :date
     actions
   end
 
