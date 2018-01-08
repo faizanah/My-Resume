@@ -15,7 +15,8 @@ module Resume
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-
+    config.assets.precompile += %w( ckeditor/* )
+    
     CONTENT_LIST = [
         {name: 'Experience' ,value: 'experiences' },
         {name: 'Skills' , value: 'skills' },
