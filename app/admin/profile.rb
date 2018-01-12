@@ -1,7 +1,7 @@
 ActiveAdmin.register Profile do
   menu priority: 1
   actions :all, :except => [:destroy , :new]
-  permit_params :full_name,:title ,:facebook_url , :git_url , :linkedin_url , :map_url , :theme_id , :resume , :about, :email, :phone , :image , :web_url, :address , admin_user_attributes: [:id, :_update , media_links_attributes: [ :id, :admin_user_id , :name, :icon , :url , :_destroy, :_create, :_update ]]
+  permit_params :full_name,:title , :map_url , :theme_id , :resume , :about, :email, :phone , :image , :web_url, :address , admin_user_attributes: [:id, :_update , media_links_attributes: [ :id, :admin_user_id , :name, :icon , :url , :_destroy, :_create, :_update ]]
   config.filters = false
 
   controller do
@@ -42,7 +42,7 @@ ActiveAdmin.register Profile do
 
       tab 'Social Links' do
 
-        f.inputs "User fields", for: [:admin_user, current_admin_user] do |u|
+        f.inputs " ", for: [:admin_user, current_admin_user] do |u|
           u.has_many :media_links , allow_destroy: true,  new_record: true do |c|
             c.input :name
             c.input :url

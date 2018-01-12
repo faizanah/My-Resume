@@ -6,9 +6,8 @@ section#about.section
           = current_profile.picture
         #intro-div.card.content-wrapper
           ul.text-center.list-inline
-            = current_profile.linkedin_link
-            = current_profile.facebook_link
-            = current_profile.git_link
+            - current_user.media_links.decorate.each do |media|
+              = media.link
           p.text-center
             = raw(current_profile.about)
           .row
