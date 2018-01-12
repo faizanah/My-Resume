@@ -22,7 +22,7 @@ class ProjectDecorator < ApplicationDecorator
   end
 
   def responsive_image
-    h.image_tag object.image , alt: object.title , class: 'img-responsive' , style: 'max-width: 250px !important; max-height: 115px !important;'
+    h.image_tag object.image , alt: object.title , class: 'img-responsive'
   end
 
   def modal

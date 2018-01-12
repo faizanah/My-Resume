@@ -4,6 +4,7 @@ class Project < ApplicationRecord
   validates :url, url: true , allow_blank: true
 
   belongs_to :admin_user
+
   has_and_belongs_to_many :project_categories
   mount_uploader :image, ProjectUploader
 
@@ -11,5 +12,6 @@ class Project < ApplicationRecord
   # has_many :attachments, class_name: "Attachment" , foreign_key: :attached_item_id
 
   accepts_nested_attributes_for :project_categories
-  accepts_nested_attributes_for :attachments, allow_destroy: true, reject_if: proc { |attributes| attributes[:attachment].nil? }
+  accepts_nested_attributes_for :attachments, allow_destroy: true
+
 end

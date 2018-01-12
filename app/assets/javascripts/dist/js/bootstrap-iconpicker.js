@@ -584,3 +584,4 @@ function addIconPicker(){
         unselectedClass: ''
     });
 }
+$('.input-iconpicker').on('click' , addIconPicker);
