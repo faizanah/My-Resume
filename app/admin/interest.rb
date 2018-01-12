@@ -50,17 +50,7 @@ ActiveAdmin.register Interest do
     f.semantic_errors *f.object.errors.keys
     f.inputs "Interests" do
       f.input :name
-
-      div class: "row" do
-        div class: 'col-md-3'do
-          "Icon:"
-        end
-        div class: "col-md-9" do
-          button class: 'btn btn-default' , role: "iconpicker" , "data-icon": "#{f.object.icon}" , name: "interest[icon]" do
-            "Select Icon"
-          end
-        end
-      end
+      f.input :icon , input_html: { class: "input-iconpicker" }
     end
     f.actions
   end

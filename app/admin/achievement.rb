@@ -55,15 +55,7 @@ ActiveAdmin.register Achievement do
       f.input :title
       f.input :description , as: :text
       f.input :date
-      div class: "row" do
-        div class: 'col-md-3'do
-        end
-        div class: "col-md-9" do
-          button class: 'btn btn-default' , role: "iconpicker" , "data-icon": "#{f.object.icon}" , name: "achievement[icon]" do
-            "Select Icon"
-          end
-        end
-      end
+      f.input :icon , input_html: { class: "input-iconpicker" }
     end
     f.actions
   end

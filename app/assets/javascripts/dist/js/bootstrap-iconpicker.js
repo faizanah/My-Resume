@@ -491,6 +491,30 @@
                         $this.popover('show');
                     });
                 }
+                if($this.prop('tagName') === 'BUTTON'){
+                    $this.empty()
+                        .append('<i></i>')
+                        .append('<input type="hidden" ' + name + '></input>')
+                        .append('<span class="caret"></span>')
+                        .addClass('iconpicker');
+                    data.setIconset(op.iconset);
+                    $this.on('click', function(e) {
+                        e.preventDefault();
+                        $this.popover({
+                            animation: false,
+                            trigger: 'manual',
+                            html: true,
+                            content: op.table,
+                            container: 'body',
+                            placement: op.placement
+                        }).on('shown.bs.popover', function () {
+                            data.switchPage(op.icon);
+                            data.bindEvents();
+                        });
+                        $this.data('bs.popover').tip().addClass('iconpicker-popover');
+                        $this.popover('show');
+                    });
+                }
                 else{
                     op.inline = true;
                     data.setIconset(op.iconset);
@@ -529,5 +553,34 @@
     });
 
     $('button[role="iconpicker"],div[role="iconpicker"]').iconpicker();
+    // $('.input-iconpicker').iconpicker();
 
 })(jQuery);
+
+function addIconPicker(){
+    var $input = $('.input-iconpicker');
+    var $value = $input.val();
+    var name   = $input.attr('name');
+    var $id   = $input.attr('id');
+    var $parent    = $($input).closest('li');
+    $input.remove();
+    $parent.append('<button class="btn btn-default" role="iconpicker" id='+ $id+' data-icon= '+ $value +' name=' + name + '></button>');
+    jQuery('#'+$id).iconpicker({
+        align: 'center',
+        arrowClass: 'btn-primary',
+        arrowPrevIconClass: 'ion-chevron-left',
+        arrowNextIconClass: 'ion-chevron-right',
+        cols: 6,
+        footer: true,
+        header: true,
+        iconset: 'ionicon',
+        labelHeader: '{0} of {1} pages',
+        labelFooter: '{0} - {1} of {2} icons',
+        placement: 'bottom',
+        rows: 3,
+        search: true,
+        searchText: 'Search',
+        selectedClass: 'btn-success',
+        unselectedClass: ''
+    });
+}

@@ -33,15 +33,7 @@ ActiveAdmin.register Service do
     f.inputs "Services" do
       f.input :title
       f.input :description , as: :text
-      div class: "row" do
-        div class: 'col-md-3'do
-        end
-        div class: "col-md-9" do
-          button class: 'btn btn-default' , role: "iconpicker" , "data-icon": "#{f.object.icon}" , name: "service[icon]" do
-            "Select Icon"
-          end
-        end
-      end
+      f.input :icon , input_html: { class: "input-iconpicker" }
     end
     f.actions
   end
