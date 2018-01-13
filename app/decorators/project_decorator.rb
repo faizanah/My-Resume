@@ -22,7 +22,7 @@ class ProjectDecorator < ApplicationDecorator
   end
 
   def responsive_image
-    h.image_tag object.image , alt: object.title , class: 'img-responsive'
+    h.image_tag object.image , alt: object.title , class: 'img-responsive center-image'
   end
 
   def modal
