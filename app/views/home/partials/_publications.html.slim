@@ -1,8 +1,9 @@
 .container
   .row
     /! 1st publication
+    - css_class = current_user.publications.count > 1 ? 'col-md-6' : 'col-md-12'
     - current_user.publications.decorate.each do |publication|
-      .col.col-md-6.col-sm-12.col-xs-12
+      .col.col-sm-12.col-xs-12 class="#{css_class}"
         .publication.card.text-center
           /! place Icon Here
           .icon-div.text-center data-aos="zoom-in" data-aos-delay="300"
