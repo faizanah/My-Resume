@@ -1,4 +1,4 @@
-class EducationDecorator < Draper::Decorator
+class EducationDecorator < ApplicationDecorator
   delegate_all
 
   def school

@@ -11,12 +11,12 @@ class AdminUser < ApplicationRecord
   has_many :project_categories  , -> { order(position: :asc) } , dependent: :destroy
   has_many :user_contents       , -> { order(position: :asc) } , dependent: :destroy
   has_many :media_links         , -> { order(position: :asc) } , dependent: :destroy
+  has_many :publications        , -> { order(position: :asc) } , dependent: :destroy
   has_many :projects            , dependent: :destroy
   has_many :contacts            , dependent: :destroy
   has_many :interests           , dependent: :destroy
   has_many :services            , dependent: :destroy
   has_many :achievements        , dependent: :destroy
-  has_many :publications        , dependent: :destroy
   has_many :contents            , through: :user_contents
 
   after_create :set_profile

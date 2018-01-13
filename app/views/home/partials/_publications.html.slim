@@ -1,97 +1,21 @@
 .container
   .row
     /! 1st publication
-    .col.col-md-6.col-sm-12.col-xs-12
-      .publication.card.text-center
-        /! place Icon Here
-        .icon-div.text-center data-aos="zoom-in" data-aos-delay="300"
-          i.ion-ios-book
-        h6.text-center.text-capitalize Name of the book will be placed here
-        /! Type and Published date here
-        ul.text-center.list-inline
-          li
-            i.ion-ios-pricetag
-            | Type: Novel
-          li
-            i.ion-calendar
-            | Published On: 12 Jun 2015
-        /! Some Info About Item
-        p.text-center
-          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-          | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel. Vestibulum
-          | venenatis vestibulum elit ultricies.
-        .row
-          /! Item link here
-          a.btn.waves-effect.waves-light.btn-primary.custom-btn href="#0"  Read Now
-    /! ./1st publication
-    /! 2nd publication
-    .col.col-md-6.col-sm-12.col-xs-12
-      .publication.card.text-center
-        /! place Icon Here
-        .icon-div.text-center data-aos="zoom-in" data-aos-delay="300"
-          i.ion-ios-paper
-        h6.text-center.text-capitalize Subject of research will be placed here
-        /! Type and Published date here
-        ul.text-center.list-inline
-          li
-            i.ion-ios-pricetag
-            | Type: Research
-          li
-            i.ion-calendar
-            | Published On: 12 Jun 2015
-        /! Some Info About Item
-        p.text-center
-          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-          | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel. Vestibulum
-          | venenatis vestibulum elit ultricies.
-        .row
-          /! Item link here
-          a.btn.waves-effect.waves-light.btn-primary.custom-btn href="#0"  Read Now
-    /! ./2nd publication
-    /! 3rd publication
-    .col.col-md-6.col-sm-12.col-xs-12
-      .publication.card.text-center
-        /! place Icon Here
-        .icon-div.text-center data-aos="zoom-in" data-aos-delay="300"
-          i.ion-ios-book
-        h6.text-center.text-capitalize Name of the book will be placed here
-        /! Type and Published date here
-        ul.text-center.list-inline
-          li
-            i.ion-ios-pricetag
-            | Type: Novel
-          li
-            i.ion-calendar
-            | Published On: 12 Jun 2015
-        /! Some Info About Item
-        p.text-center
-          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-          | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel. Vestibulum
-          | venenatis vestibulum elit ultricies.
-        .row
-          /! Item link here
-          a.btn.waves-effect.waves-light.btn-primary.custom-btn href="#0"  Read Now
-    /! ./3rd publication
-    /! 4th publication
-    .col.col-md-6.col-sm-12.col-xs-12
-      .publication.card.text-center
-        /! place Icon Here
-        .icon-div.text-center data-aos="zoom-in" data-aos-delay="300"
-          i.ion-ios-paper
-        h6.text-center.text-capitalize Subject of research will be placed here
-        /! Type and Published date here
-        ul.text-center.list-inline
-          li
-            i.ion-ios-pricetag
-            | Type: Research
-          li
-            i.ion-calendar
-            | Published On: 12 Jun 2015
-        /! Some Info About Item
-        p.text-center
-          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis et tortor ac tincidunt.
-          | In euismod iaculis lobortis. Vestibulum posuere molestie ipsum vel. Vestibulum
-          | venenatis vestibulum elit ultricies.
-        .row
-          /! Item link here
-          a.btn.waves-effect.waves-light.btn-primary.custom-btn href="#0"  Read Now
+    - current_user.publications.decorate.each do |publication|
+      .col.col-md-6.col-sm-12.col-xs-12
+        .publication.card.text-center
+          /! place Icon Here
+          .icon-div.text-center data-aos="zoom-in" data-aos-delay="300"
+            i.ion-ios-paper
+          h6.text-center.text-capitalize= publication.title
+          /! Type and Published date here
+          ul.text-center.list-inline
+            li
+             = publication.publisher_name
+            li
+             = publication.published_on
+          /! Some Info About Item
+          p.text-center
+            = raw publication.description
+          .row
+            = publication.publication_link
