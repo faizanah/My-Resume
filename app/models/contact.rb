@@ -14,6 +14,7 @@ class Contact < ApplicationRecord
 
   def send_email
     ContactUsMailer.send_email(self).deliver
+    ContactUsMailer.thank_you_for_contact_us(self).deliver
   end
 
 end

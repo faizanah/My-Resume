@@ -26,10 +26,13 @@ Rails.application.configure do
   config.assets.compile = false
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'no-reply@example.com'}
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
+      :domain               => ENV['domain'],
       :user_name            => ENV['gmail_username'],
       :password             => ENV['gmail_password'],
       :authentication       => "plain",
@@ -91,7 +94,7 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => ENV['domain'] }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

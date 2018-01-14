@@ -1,17 +1,15 @@
 class ContactUsMailer < ApplicationMailer
 
   def send_email(contact)
-    # ActionMailer::Base.smtp_settings = {
-    #     :address              => "smtp.gmail.com",
-    #     :port                 => 587,
-    #     :user_name            => ENV['gmail_username'],
-    #     :password             => ENV['gmail_password'],
-    #     :authentication       => "plain",
-    #     :enable_starttls_auto => true
-    # }
     @contact = contact
     @user = contact.admin_user
     mail( to: @user.profile.email, subject: @contact.subject , from:  @contact.email)
+  end
+
+  def thank_you_for_contact_us contact
+    @contact = contact
+    @user = contact.admin_user
+    mail( to: @contact.email, subject: "Thank You!" , from:  @user.profile.email)
   end
 
 end
