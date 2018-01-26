@@ -36,7 +36,7 @@ ActiveAdmin.register Profile do
       end
 
       tab 'Job Details' do
-        f.input :title , label: "Current Job Title/Position"
+        f.input :title , label: "Resume Title"
         f.input :resume
       end
 
