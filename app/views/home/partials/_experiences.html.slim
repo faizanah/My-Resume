@@ -2,7 +2,7 @@
 .container
   .row
     .col.col-md-12.col-sm-12.col-xs-12
-      .timeline.center-block.full-post
+      .timeline.center-block
         ul
           - current_user.experiences.includes(:lists).decorate.each do |experience|
             li.card data-aos="fade-up"
