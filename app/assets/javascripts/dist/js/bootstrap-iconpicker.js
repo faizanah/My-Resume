@@ -585,3 +585,9 @@ function addIconPicker(){
     });
 }
 $('.input-iconpicker').on('click' , addIconPicker);
+
+$(document).ready(function(){
+    $(document).on('has_many_add:after', function(e, fieldset){
+        addIconPicker();
+    });
+});
