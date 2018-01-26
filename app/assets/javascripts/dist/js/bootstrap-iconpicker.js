@@ -559,7 +559,7 @@
 
 function addIconPicker(){
     var $input = $('.input-iconpicker');
-    var $value = $input.val();
+    var $value = $input.val() || 'ion-';
     var name   = $input.attr('name');
     var $id   = $input.attr('id');
     var $parent    = $($input).closest('li');
