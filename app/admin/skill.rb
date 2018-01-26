@@ -2,7 +2,7 @@ ActiveAdmin.register Skill do
   permit_params :name , :skill_type_id , :score
   filter :name
   menu label: "Skills" , parent: "Skills" , priority: 5
-
+  config.per_page = [10, 50, 100]
   before_create do |skill|
     skill.admin_user_id = current_admin_user.id
   end

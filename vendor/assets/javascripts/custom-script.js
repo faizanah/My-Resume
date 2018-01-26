@@ -34,6 +34,8 @@ equalheight = function(container){
      $(window).on('load', function () {
          equalheight('.skill-wrapper');
          equalheight('.hover-effect');
+         $('.portfolio img').css({'position': 'absolute'});
+
         $('#page-loader').fadeOut(3000);
         $('#intro').addClass('animated fadeInDown');
         $('#intro-div').addClass('animated fadeInUp');
