@@ -21,12 +21,12 @@ class ApplicationController < ActionController::Base
 
   def check_visiter
     puts "Location: "
-    puts "IP: #{request.ip}"
-    puts "country_code: #{request.country_code}"
-    puts "country_name: #{request.country_name}"
-    puts "region_code: #{request.region_code}"
-    puts "region_name: #{request.region_name}"
-    puts request.location
+    # puts "IP: #{request.ip}"
+    # puts "country_code: #{request.country_code}"
+    # puts "country_name: #{request.country_name}"
+    # puts "region_code: #{request.region_code}"
+    # puts "region_name: #{request.region_name}"
+    # puts request.location
   end
 
 end
