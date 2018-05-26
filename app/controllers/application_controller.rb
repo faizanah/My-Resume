@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
   helper_method :current_profile , :current_user
   # layout :set_layout
-  before_action :check_visiter
+  # before_action :check_visiter
 
   def current_profile
     @profile ||= current_user.profile.decorate
