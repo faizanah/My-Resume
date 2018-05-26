@@ -9,7 +9,7 @@ class ContactUsMailer < ApplicationMailer
   def thank_you_for_contact_us contact
     @contact = contact
     @user = contact.admin_user
-    mail( to: @contact.email, subject: "Thank You!" , from:  @user.profile.email)
+    mail( to: @contact.email, subject: "Thank You!" , from: @user.profile.email )
   end
 
 end
