@@ -559,7 +559,7 @@
 
 function addIconPicker(){
     var $input = $('.input-iconpicker');
-    var $value = $input.val();
+    var $value = $input.val() || 'ion-';
     var name   = $input.attr('name');
     var $id   = $input.attr('id');
     var $parent    = $($input).closest('li');
@@ -585,3 +585,9 @@ function addIconPicker(){
     });
 }
 $('.input-iconpicker').on('click' , addIconPicker);
+
+$(document).ready(function(){
+    $(document).on('has_many_add:after', function(e, fieldset){
+        addIconPicker();
+    });
+});

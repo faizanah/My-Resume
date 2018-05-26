@@ -26,3 +26,15 @@
     right: 0;
     bottom: 0;
 }
+.li_type_list {
+    display: list-item;
+    margin-left: 36px;
+    list-style-type: circle;
+    font-weight: 300;
+}
+.m-b-20{
+    margin-bottom: 20px !important;
+}
+.portfolio img{
+    max-height: 200px;
+}

@@ -23,12 +23,12 @@ ActiveAdmin.register Education do
   form do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs "Educational Information" do
-      f.input :degree
+      f.input :degree , label: "Degree Program"
       f.input :school_name , label: "School"
-      f.input :school_url , label: "Website URL"
-      f.input :period_start
-      f.input :period_end
-      f.input :summary
+      f.input :period_start , label: "Start Date"
+      f.input :period_end , label: "End Date"
+      f.input :school_url , label: "Website"
+      f.input :summary , label: "Short Description"
     end
     f.actions
   end
