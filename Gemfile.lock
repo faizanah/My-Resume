@@ -6,6 +6,17 @@ GIT
       actionpack (>= 3.2)
       railties (>= 3.2)
 
+GIT
+  remote: https://github.com/plataformatec/devise
+  revision: 11026007206226c1189f6050ab05d2284f47a669
+  specs:
+    devise (4.6.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 6.0)
+      responders
+      warden (~> 1.2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,7 +86,7 @@ GEM
       jquery-rails
     arel (7.1.4)
     aws_cf_signer (0.1.3)
-    bcrypt (3.1.11)
+    bcrypt (3.1.12)
     bindex (0.5.0)
     bourbon (4.3.4)
       sass (~> 3.4)
@@ -104,12 +115,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
-    devise (4.3.0)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.2)
-      responders
-      warden (~> 1.2.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     draper (3.0.1)
@@ -310,7 +315,7 @@ DEPENDENCIES
   ckeditor
   cloudinary
   coffee-rails (~> 4.2)
-  devise (~> 4.3)
+  devise!
   draper (~> 3.0, >= 3.0.1)
   figaro (~> 1.1, >= 1.1.1)
   font-awesome-rails
@@ -335,4 +340,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.2

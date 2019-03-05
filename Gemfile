@@ -15,7 +15,7 @@ gem 'slim', '~> 3.0', '>= 3.0.9'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'devise', '~> 4.3'
+gem 'devise', git: 'https://github.com/plataformatec/devise'
 gem "bourbon"
 gem "activeadmin_reorderable"
 gem 'draper', '~> 3.0', '>= 3.0.1'
